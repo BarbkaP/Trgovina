@@ -1,13 +1,15 @@
-/*
-	Ime datoteke: 	PralnoSusilniStrojTableModel.java
-	Avtor:			Barbka Podbregar
-*/
-
 import javax.swing.table.*;
 
+/**
+ * 
+ * @author barbka
+ *
+ */
 public class PralnoSusilniStrojTableModel extends DefaultTableModel {
 
-	// Konstruktor
+	/**
+	 * Javni konstruktor
+	 */
 	public PralnoSusilniStrojTableModel() {
 	
 		// Kliče konstruktor nadrazreda
@@ -24,11 +26,13 @@ public class PralnoSusilniStrojTableModel extends DefaultTableModel {
 		addRow(vrstica);
 		
 	}
-	
-	// Metoda, ki doda pralno sušilni stroj na seznam
-	// Vhodni parametri: pss - PralnoSusilniStroj
-	// Potek/opis: Metoda, ki doda stroj na seznam in v tabelo
-	// Vrne vrednost: /
+
+	/**
+	 * Metoda, ki doda pralno sušilni stroj na seznam
+	 * doda stroj na seznam in v tabelo
+	 * 
+	 * @param pss PralnoSusilniStroj
+	 */
 	public void addPralnoSusilniStroj(PralnoSusilniStroj pss) {
 	
 		// Ustvarimo naslovno vrstico
@@ -39,14 +43,20 @@ public class PralnoSusilniStrojTableModel extends DefaultTableModel {
 		addRow(vrstica);
 		
 	}
-	
+
+	/**
+	 * Metoda za spreminjanje vrednosti v tabeli
+	 * 
+	 * @param value nova vrednost s katero prepišemo prejšnjo
+	 * @param row indeks vrstice, ki smo jo spremenili
+	 * @param col indeks stolpca, ki smo ga spremenili
+	 */
 	public void setValueAt(Object value, int row, int col) {
 	
 		String lastnost = col == 0 ? "zmogljivost pranja" : "zmogljivost sušenja";
 	
 		System.out.println("Popravljam " + lastnost + " " + row + ". pralnega stroja na " + value.toString() + ".");
 		super.setValueAt(value, row, col);
-		
 		
     }
 	

@@ -1,41 +1,53 @@
-/*
-	Ime datoteke: 	Trgovina.java
-	Avtor:			Barbka Podbregar
-	Vhodni podatki: /
-	Opis: 			Aplikacija z grafičnim uporabniškim vmesnikom za delo z pralnimi stroji
-	Izhodni podatki:Okno grafičnega uporabniškega vmesnika
-*/
-
-// Uvozimo pakete za delo z GUI
 import javax.swing.*;
 
 // Uvozimo paket za delo z dogodki
 import java.awt.event.*;
 
-// Deklariramo javni razred
+/**
+ * 
+ * @author barbka
+ *
+ */
 public class Trgovina extends JFrame implements ActionListener {
 
-	// Deklariramo zasebne lastnosti
+	/**
+	 * Zasebna spremenljivka povrsina
+	 */
 	private JPanel povrsina;
+	/**
+	 * Zasebna spremenljivka gumb
+	 */
 	private JButton dodajJButton;
+	/**
+	 * Zasebni spremenljivki zmogljivost pranja in zmogljivost sušenja
+	 */
 	private JTextField zmogljivostPranjaPolje, zmogljivostSusenjaPolje;
+	/**
+	 * Zasebna spremenljivka tabela
+	 */
 	private JTable tabela;
+	/**
+	 * Zasebna spremenljivka model tabele
+	 */
 	private PralnoSusilniStrojTableModel modelTabele;
 
-	// Deklariramo javno statično metodo, ki se izvede ob zagonu programa
-	// Vhodni parametri: vhodni parametri iz konzole
-	// Potek/opis: ustvari novo okno
-	// Vrne vrednost: /
+	/**
+	 * Javna statična metoda, ki se zažene ob zagonu programa
+	 * ustvari novo okno
+	 * 
+	 * @param args Argumenti s katerimi kličemo program ob zagonu
+	 */
 	public static void main(String[] args) {
 	
 		Trgovina t = new Trgovina("Trgovina s pralno sušilnimi stroji");
 		
 	}
 	
-	// Javni konstruktor
-	// Vhodni parametri: n - naslov okna
-	// Potek/opis: ustvari nov objekt tipa Miza
-	// Vrne vrednost: nov objekt
+	/**
+	 * Javni konstruktor
+	 * 
+	 * @param n naslov okna
+	 */
 	public Trgovina(String n) {
 		
 		// Kličemo konstruktor nadrazreda
@@ -76,10 +88,12 @@ public class Trgovina extends JFrame implements ActionListener {
 		
 	}
 	
-	// Metoda, ki jo predpisuje vmesnik ActionListener
-	// Vhodni parametri: ae - dogodek
-	// Potek/opis: doda stroj v tabelo
-	// Vrne vrednost: /
+	/**
+	 * Metoda, ki jo predpisuje vmesnik ActionListener
+	 * doda stroj v tabelo
+	 * 
+	 * @param ae ActionEvent dogodek
+	 */
 	public void actionPerformed(ActionEvent ae) {
 	
 		System.out.println("Dodajam stroj ...");

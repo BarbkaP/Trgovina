@@ -1,24 +1,29 @@
-/*
-	Ime datoteke: 	PralniStrojMain.java
-	Avtor:			Barbka Podbregar
-	Komentar na Vajo 29: Nisem dodala da se vse lastnosti berejo iz ukazne konzole, ker bi bilo tega preveč
-*/
-
-// Vključimo paket za delo z vhodno izhodnimi napravami
 import java.io.*;
 
 import java.util.*;
 
-// Deklariramo javni razred
+/**
+ * 
+ * @author barbka
+ *
+ */
 public class PralniStrojMain {
 
-	// Deklariramo statično lastnost za vnos iz konzole
+	/**
+	 * Statična lastnost za vnos iz konzole
+	 */
 	private static BufferedReader in;
 	
-	// Deklariramo statično lastnost s seznamom pralnih strojev
+	/**
+	 * Statična lastnost s seznamom pralnih strojev
+	 */
 	private static ArrayList<PralniStroj> pralniStroji;
 
-	// Deklariramo javno statično metodo, ki se izvede ob zagonu programa
+	/**
+	 * Javna statična metoda, ki se zažene ob zagonu programa
+	 * 
+	 * @param args Argumenti s katerimi kličemo program ob zagonu
+	 */
 	public static void main(String[] args) {
 	
 		// Inicializiramo statično lastnost za vnos iz konzole

@@ -1,12 +1,11 @@
-/*
-	Ime datoteke: 	PralniStroj.java
-	Avtor:			Barbka Podbregar
-*/
-
 import java.util.*;
 import java.util.stream.*;
 
-// Deklariramo javni razred PralniStroj
+/**
+ * 
+ * @author barbka
+ *
+ */
 public class PralniStroj {
 
 	// Deklariramo zasebne lastnosti razreda PralniStroj
@@ -14,10 +13,11 @@ public class PralniStroj {
 	private boolean jePrizgan;
 	private List<String> vsebina;
 	
-	// Javni konstruktor
-	// Vhodni parametri: z - zmogljivost pranja
-	// Potek/opis: ustvari nov objekt tipa PralniStroj
-	// Vrne vrednost: nov objekt
+	/**
+	 * Javni konstruktor
+	 * 
+	 * @param z zmogljivost pranja
+	 */
 	public PralniStroj(int z) {
 	
 		// Inicializiramo lastnosti objekta
@@ -29,10 +29,13 @@ public class PralniStroj {
 		
 	}
 	
-	// Javni konstruktor
-	// Vhodni parametri: z - zmogljivost pranja, p - ali je prižgan, v - vsebina
-	// Potek/opis: ustvari nov objekt tipa PralniStroj
-	// Vrne vrednost: nov objekt
+	/**
+	 * Javni konstruktor
+	 * 
+	 * @param z zmogljivost pranja
+	 * @param p ali je prižgan
+	 * @param v vsebina
+	 */
 	public PralniStroj(int z, boolean p, List<String> v) {
 	
 		// Inicializiramo lastnosti objekta
@@ -44,10 +47,13 @@ public class PralniStroj {
 		
 	}
 	
-	// Javna metoda za prižiganje pralnega stroja
-	// Vhodni parametri: /
-	// Potek/opis: prižge pralni stroj v primeru da ni prazen
-	// Vrne vrednost: ali je pralni stroj prižgan, v primeru da je prazen vrne napako
+	/**
+	 * Javna metoda za prižiganje pralnega stroja
+	 * prižge pralni stroj v primeru da ni prazen
+	 * 
+	 * @return true - če je pralni stroj prižgan, false - če pralni stroj ni prižgan
+	 * @throws PrazenPralniStrojException vrže napako v primeru da je pralni stroj prazen
+	 */
 	public boolean prizgi() throws PrazenPralniStrojException {
 	
 		// Če pralni stroj kaj vsebuje
@@ -66,10 +72,15 @@ public class PralniStroj {
 		return jePrizgan;
 	}
 	
-	// Javna metoda, ki napolni pralni stroj
-	// Vhodni parametri: t - teža oblačil, ki jih dodajamo v pralni stroj, v - oblačila, ki jih dodajamo v pralni stroj
-	// Potek/opis: v primeru da je teža oblačil manjša kot je zmogljivost pranja pralnega stroja, napolni pralni stroj z v
-	// Vrne vrednost: vsebino pralnega stroja, v primeru da je teža oblačil večja kot je zmogljivost pralnega stroja, vrne napako
+	/**
+	 * Javna metoda, ki napolni pralni stroj
+	 * v primeru da je teža oblačil manjša kot je zmogljivost pranja pralnega stroja, napolni pralni stroj z v
+	 * 
+	 * @param t teža oblačil, ki jih dodajamo v pralni stroj
+	 * @param v oblačila, ki jih dodajamo v pralni stroj
+	 * @return vsebina pralnega stroja
+	 * @throws Exception vrže napako, v primeru da je teža oblačil večja kot je zmogljivost pralnega stroja
+	 */
 	public List<String> napolni(int t, List<String> v) throws Exception {
 	
 		// Če je teža večja od zmogljivosti pranja pralnega stroja
@@ -89,10 +100,12 @@ public class PralniStroj {
 		
 	}
 	
-	// Javna metoda za praznjenje pralnega stroja
-	// Vhodni parametri: /
-	// Potek/opis: izprazne pralni stroj v primeru da je ugasnjen, sicer pralni stroj ugasne in ga izprazne
-	// Vrne vrednost: vsebino pralnega stroja
+	/**
+	 * Javna metoda za praznjenje pralnega stroja
+	 * izprazne pralni stroj v primeru da je ugasnjen, sicer pralni stroj ugasne in ga izprazne
+	 * 
+	 * @return vsebina pralnega stroja
+	 */
 	public List<String> ugasniInIzprazni() {
 	
 		// Če je pralni stroj prižgan
@@ -117,30 +130,33 @@ public class PralniStroj {
 		
 	}
 	
-	// Javna getter metoda, ki vrne zmogljivost pranja
-	// Vhodni parametri: /
-	// Potek/opis: vrne vrednost
-	// Vrne vrednost: zmogljivost pranja
+	/**
+	 * Javna getter metoda, ki vrne zmogljivost pranja
+	 * 
+	 * @return zmogljivost pranja
+	 */
 	public int getZmogljivostPranja() {
 	
 		return zmogljivostPranja;
 	
 	}
 	
-	// Javna getter metoda, ki vrne ali je pralni stroj prižgan ali ne
-	// Vhodni parametri: /
-	// Potek/opis: vrne vrednost
-	// Vrne vrednost: je prižgan ali ne
+	/**
+	 * Javna getter metoda, ki vrne ali je pralni stroj prižgan ali ne
+	 * 
+	 * @return true - če je pralni stroj prižgan, false - če pralni stroj ni prižgan
+	 */
 	public boolean getJePrizgan() {
 	
 		return jePrizgan;
 	
 	}
 	
-	// Javna getter metoda, ki vrne vsebino pralnega stroja
-	// Vhodni parametri: /
-	// Potek/opis: vrne vrednost
-	// Vrne vrednost: vsebina
+	/**
+	 * Javna getter metoda, ki vrne vsebino pralnega stroja
+	 * 
+	 * @return vsebina
+	 */
 	public List<String> getVsebina() {
 	
 		return vsebina;

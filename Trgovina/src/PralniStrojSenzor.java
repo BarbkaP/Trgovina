@@ -1,11 +1,10 @@
-/*
-	Ime datoteke: 	PralniStrojSenzor.java
-	Avtor:			Barbka Podbregar
-*/
-
 import java.util.*;
 
-// Deklariramo javni razred PralniStrojSenzor
+/**
+ * 
+ * @author barbka
+ *
+ */
 public class PralniStrojSenzor extends PralniStroj implements Senzor{
 
 	// Deklariramo javne statične lastnosti razreda (materiali oblačil)
@@ -25,10 +24,12 @@ public class PralniStrojSenzor extends PralniStroj implements Senzor{
 	private String vecinskiMaterial;
 	private String nacinPranja;
 	
-	// Javni konstruktor
-	// Vhodni parametri: z - zmogljivost pranja, m - večinski material oblačil
-	// Potek/opis: ustvari nov objekt tipa PralniStrojSenzor
-	// Vrne vrednost: nov objekt
+	/**
+	 * Javni konstruktor
+	 * 
+	 * @param z zmogljivost pranja
+	 * @param m večinski material oblačil
+	 */
 	public PralniStrojSenzor(int z, String m) {
 	
 		// Pokličemo konstruktor nadrazreda - ustvarimo pralni stroj z zmogljivostjo pranja z
@@ -40,10 +41,13 @@ public class PralniStrojSenzor extends PralniStroj implements Senzor{
 		
 	}
 	
-	// Javna metoda za automatsko izbiro pralnega programa
-	// Vhodni parametri: /
-	// Potek/opis: izbere pralni program glede na večinski material oblačil v pralnem stroju
-	// Vrne vrednost: izbrani pralni program, vrne napako v primeru da program za pranje ni definiran
+	/**
+	 * Javna metoda za automatsko izbiro pralnega programa
+	 * izbere pralni program glede na večinski material oblačil v pralnem stroju
+	 * 
+	 * @return izbrani pralni program
+	 * @throws NedefiniranPralniProgramException vrže napako v primeru da program za pranje ni definiran
+	 */
 	public String izberiPralniProgram() throws NedefiniranPralniProgramException {
 	
 		if (!MAPPER_MATERIAL_NACIN_PRANJA.containsKey(vecinskiMaterial)) {
